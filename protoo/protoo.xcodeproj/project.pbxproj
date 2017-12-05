@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F6EA608FE690F59908A5F01 /* Pods_protoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D84028B09E0B274CB59545A /* Pods_protoo.framework */; };
 		F03219B81FD6C2FF0016BBA1 /* protoo.h in Headers */ = {isa = PBXBuildFile; fileRef = F03219B61FD6C2FF0016BBA1 /* protoo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84028B09E0B274CB59545A /* Pods_protoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_protoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DEE17F8FD157959CFD03CA /* Pods-protoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protoo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-protoo/Pods-protoo.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0F899FC1B51AA0DFD3FE04 /* Pods-protoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protoo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-protoo/Pods-protoo.release.xcconfig"; sourceTree = "<group>"; };
 		F03219B31FD6C2FF0016BBA1 /* protoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = protoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03219B61FD6C2FF0016BBA1 /* protoo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = protoo.h; sourceTree = "<group>"; };
 		F03219B71FD6C2FF0016BBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,17 +25,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6EA608FE690F59908A5F01 /* Pods_protoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C7B1011CF043F554944DBCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D84028B09E0B274CB59545A /* Pods_protoo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1FDDE564AB7B9F14EB25ADB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97DEE17F8FD157959CFD03CA /* Pods-protoo.debug.xcconfig */,
+				9F0F899FC1B51AA0DFD3FE04 /* Pods-protoo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F03219A91FD6C2FF0016BBA1 = {
 			isa = PBXGroup;
 			children = (
 				F03219B51FD6C2FF0016BBA1 /* protoo */,
 				F03219B41FD6C2FF0016BBA1 /* Products */,
+				C1FDDE564AB7B9F14EB25ADB /* Pods */,
+				2C7B1011CF043F554944DBCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,10 +94,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F03219BB1FD6C2FF0016BBA1 /* Build configuration list for PBXNativeTarget "protoo" */;
 			buildPhases = (
+				A0378655A8D706FC100A937E /* [CP] Check Pods Manifest.lock */,
 				F03219AE1FD6C2FF0016BBA1 /* Sources */,
 				F03219AF1FD6C2FF0016BBA1 /* Frameworks */,
 				F03219B01FD6C2FF0016BBA1 /* Headers */,
 				F03219B11FD6C2FF0016BBA1 /* Resources */,
+				597E53A3538AFFFA08A986CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +151,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		597E53A3538AFFFA08A986CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-protoo/Pods-protoo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0378655A8D706FC100A937E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-protoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F03219AE1FD6C2FF0016BBA1 /* Sources */ = {
@@ -252,6 +314,7 @@
 		};
 		F03219BC1FD6C2FF0016BBA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97DEE17F8FD157959CFD03CA /* Pods-protoo.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -273,6 +336,7 @@
 		};
 		F03219BD1FD6C2FF0016BBA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F0F899FC1B51AA0DFD3FE04 /* Pods-protoo.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
