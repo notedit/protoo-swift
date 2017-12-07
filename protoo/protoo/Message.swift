@@ -23,8 +23,13 @@ struct Response {
     public var errorCode: Int?
     public var errorReason: String?
     public var data : Any?
-    
 }
+
+
+func randomNumber(MIN: UInt32, MAX: UInt32)-> Int{
+    return Int(arc4random_uniform(UInt32(MAX)) + UInt32(MIN));
+}
+
 
 struct Message {
     
@@ -62,7 +67,7 @@ struct Message {
     public static func requestFactory(method:String, data:Any) -> Request{
         var request = Request()
         request.request = true
-        request.id = 100
+        request.id = randomNumber(MIN:100,MAX: UInt32.max)
         request.method = method
         request.data = JSON(data)
         return request
