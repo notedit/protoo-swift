@@ -20,7 +20,8 @@ target 'protoo' do
   workspace 'protoo' 
   project 'protoo/protoo.xcodeproj'
   # Pods for protoo
-
+  pod 'SwiftyJSON'
+  pod 'Starscream'
 end
 
 
